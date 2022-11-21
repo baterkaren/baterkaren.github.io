@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAPka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    body{
+        padding:0px;
+        margin:0px;
+        background-color: black;
+    }
+
+/* menu */
+.menu-bck{
+    width:100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    color:white;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding:20px;
+    border-bottom: #bcf126 solid 2px;
+    position: sticky; 
+    top: 0;
+    overflow: hidden;
+}
+
+.menu-logo{
+    height:70px;
+    float:right;
+}
+
+.menu-soc{
+    float:left;
+    height:50px;
+    padding:10px;
+}
+
+.menu-hidden {
+  width: 450px;
+  background-color:rgba(0, 0, 0, 0.7);
+  z-index:1;
+  position: sticky;
+  top:112px;
+  right:0px;
+}
+
+.menu-hidden-velky {
+  text-align: left;
+  padding: 9px;
+  color:white;
+  font-size:27px;
+  z-index:1;
+}
+
+.menu-hidden-maly {
+  text-align: left;
+  padding: 9px;
+  color:white;
+  font-size:17px;
+  z-index:1;
+}
+
+.menu-hidden-maly:hover {
+color:#bcf126;
+}
+
+.menu-hidden-velky:hover {
+color:#bcf126;
+}
+
+
+/* welcome page */
+    .welcome-bck{
+        width:100%;
+        overflow: hidden;
+        background-image:url('swapka_backround.png');
+        background-size: cover;
+        height:550px;
+        margin-top:0px;
+    }
+
+    .welcome-bck-col-txt{
+        width:50%;
+        float: left;
+        box-sizing: border-box;
+        padding-left:40px;
+    }
+
+    .welcome-bck-col{
+        width:50%;
+        float: left;
+        text-align: center;
+    }
+
+    .welcome-name-main{
+        font-size:140px;
+        padding-top: 150px;
+        color:#bcf126;
+        font-family: 'DM Serif Display', serif;
+    }
+
+    .welcome-name-sub{
+        color:#6E1CE4;
+        font-family: 'DM Sans', sans-serif;
+        text-transform: uppercase;
+    }
+
+    .welcome-name-small{
+        font-family: 'DM Sans', sans-serif;
+        color: white;
+        font-size:10px;  
+        padding-left:20px;
+    }
+
+    .welcome-circle{
+        padding-top:50px;        
+        height:450px;
+    }
+
+/* intro */
+    .intro-bck{
+        background-image: url('backround_tovaren.png');
+        background-size: cover;
+        width:100%;
+        padding-top:60px;
+        padding-bottom:60px;
+    }
+
+    .intro-name{
+        padding-left:5%;
+        font-family: 'DM Serif Display', serif;
+        font-size:50px;
+    }
+
+    .intro-text{
+        width:75%;
+        padding-top:20px;
+        padding-left:5%;
+        font-size: 20px;
+        font-family: 'DM Sans', sans-serif;
+        text-align:justify;
+    }
+
+/* zmena vyber */
+.vyber-bck{
+    background-image: url('swapka_backround.png');
+    background-size: cover;
+    width: 100%;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+.vyber-name{
+    color:white;
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    font-size:50px;
+}
+
+.vyber-inner{
+    width:90%;
+    overflow: hidden;
+    margin:auto;
+    margin-top:15px;
+}
+
+.vyber-col{
+    width:20%;
+    float:left;
+    text-align: center;
+}
+
+.vyber-col:nth-child(2) .vyber-col-img{
+    border-radius: 50%;
+    background-color: #6E1CE4;
+    margin-top:15px;
+    width:65%;
+}
+
+.vyber-col-name{
+    color:white;
+    font-family: 'DM Sans', sans-serif;
+    font-size:25px;
+    text-align: center;
+    padding-top:15px;
+}
+
+.vyber-col-img{
+    border-radius: 50%;
+    margin-top:15px;
+    width:60%;
+}
+
+/* specificky objekt */
+
+.spec-bck{
+    width: 100%;
+    background-color: black;
+    background-image: url('swapka_backround.png');
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.spec-col{
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+.spec-meno{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    padding-bottom:20px;
+    font-family: 'DM Serif Display', serif;
+}
+
+.spec-img{
+    width:60%;
+    border-radius: 50%;
+}
+
+.spec-input-bck{
+    margin:auto;
+    margin-top:40px;
+    width:70%;
+    border: 1px solid black;
+    padding:2px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 17px;
+}
+
+.spec-input-bck-button{
+    margin:auto;
+    margin-top:40px;
+    width:70%;
+    border: 1px solid black;
+    padding:2px;
+    padding-top:5px;
+    padding-bottom:5px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 17px;
+}
+
+.spec-input-bck-button:hover{
+    margin:auto;
+    margin-top:40px;
+    width:70%;
+    border: 1px solid black;
+    padding:2px;
+    padding-top:5px;
+    padding-bottom:5px;
+    overflow: hidden;
+    background-color: #bcf126;
+    border-radius: 17px;
+}
+
+.spec-input-left{
+float: left;
+width:70%;
+color: black;
+text-align: center;
+padding-top:5px;
+padding-bottom:5px;
+border-right: 2px solid black;
+box-sizing: border-box;
+}
+
+.spec-input-right{
+float: left;
+width:30%;
+color: black;
+text-align: center;
+padding-top:5px;
+padding-bottom:5px;
+box-sizing: border-box;
+border:none;
+}
+
+.spec-input-right:focus{
+border-color:white;
+}
+
+.ucet-bck{
+    width: 100%;
+    background-color: black;
+    padding-top: 180px;
+    padding-bottom: 140px;
+    overflow: hidden;
+}
+
+.ucet-col-left{
+    width: 65%;
+    float: left;
+}
+
+.ucet-col-right{
+    width: 35%;
+    text-align: center;
+    float: left;
+}
+
+.ucet-strom{
+    width: 70%;
+    text-align: center;
+}
+
+.ucet-name{
+        padding-left:5%;
+        font-family: 'DM Serif Display', serif;
+        font-size:50px;
+        color: #bcf126;
+        text-decoration: underline;
+        text-decoration-color: white;
+        text-decoration-thickness: 1px;
+}
+
+.ucet-text{
+    font-size: 30px;
+    padding-top:80px;
+    color: white;
+    width:95%;
+    padding-left:5%;
+    font-weight: bold;
+
+}
+
+.ucet-text-right{
+    text-align:right;
+    font-size: 30px;
+    color: white;
+}
+
+/* udaje osobne */
+
+.o-udaje-bck{
+    width: 100%;
+    background-image: url('swapka_backround.png');
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.o-udaje-meno{
+    font-size: 35px;
+    color: #bcf126;
+    padding-bottom:20px;
+    padding-left:5%;
+    font-family: 'DM Serif Display', serif;
+}
+
+.o-udaje-text{
+    font-size: 8px;
+    text-align: justify;
+    color: white;
+    padding-bottom:20px;
+    font-family: 'DM Serif Display', serif;
+    width:90%;
+    margin:auto;
+}
+
+/* kontakt */
+
+.kontakt-bck{
+    width: 100%;
+    background-image: url('swapka_backround.png');
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.kontakt-meno{
+    font-size: 35px;
+    color: #bcf126;
+    padding-bottom:20px;
+    padding-left:5%;
+    font-family: 'DM Serif Display', serif;
+}
+
+.kontakt-text{
+    font-size: 20px;
+    text-align: justify;
+    color: white;
+    padding-bottom:20px;
+    font-family: 'DM Serif Display', serif;
+    width:90%;
+    margin:auto;
+}
+
+/* registracia */
+
+.registracia-bck{
+    width: 100%;
+    background-color: black;
+    background-image: url('swapka_backround.png');
+    background-size: cover;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    overflow: hidden;
+}
+
+.registr-col-left{
+    width: 40%;
+    float: right;
+    padding-left:5%;
+    color:white;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.registr-col-right{
+    width: 45%;
+    float: right;
+    padding-left:5%;
+    padding-right:5%;
+    text-align: justify;
+    color:white;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.registr-meno{
+    font-size: 35px;
+    color: #bcf126;
+    padding-bottom:20px;
+    font-family: 'DM Serif Display', serif;
+}
+
+.registr-input{
+    margin-top:20px;
+    width:70%;
+    padding:2%;
+    padding-top:7px;
+    padding-bottom:7px;
+    background-color: white;
+    border-radius: 17px;
+    color: black;
+}
+
+.registr-checkbox {
+    margin-top:40px;
+    -ms-transform: scale(3); /* IE */
+  -moz-transform: scale(3); /* FF */
+  -webkit-transform: scale(3); /* Safari and Chrome */
+  -o-transform: scale(3); /* Opera */
+  transform: scale(3);
+}
+
+.registr-button{
+    margin-top:20px;
+    padding:10px;
+    background-color: white;
+    border-radius: 17px;
+    color: black;
+    margin-top:40px;
+}
+
+</style>
+<body>
+    <!-- menu -->
+<div class="menu-bck">
+    <img src="SWAPka__logo.png" class="menu-logo" alt="" >
+
+    <img src="../menu_full.png" class="menu-soc" onclick="show_menu()" alt="" id="menu-logo">
+    <img src="../fb_full.png" class='menu-soc' alt="">
+    <img src="../ig_full.png" class="menu-soc" alt="">
+    <img src="../account_full.png" class="menu-soc" alt="">
+
+</div>
+
+    <!-- hidden menu -->
+
+<table class='menu-hidden' id='hidden-menu' hidden>
+    <tr>
+      <th class="menu-hidden-velky">O Swapke</th>
+    </tr>
+      <tr>
+      <th class="menu-hidden-velky">CO2e kalkulačka</th>
+    </tr>
+      <tr>
+      <th class="menu-hidden-velky">Návod na používanie</th>
+    </tr>
+      <tr>
+      <th class="menu-hidden-velky">Kontakt</th>
+    </tr>
+  </table>
+
+    <!-- welcome -->
+<div class="welcome-bck" id="welcome">
+    <div class="welcome-bck-col-txt">
+        <div class="welcome-name-main">SWAPka</div>
+        <div class="welcome-name-sub">ti povie, koľko co2 si ušetril/a,  keď si predmet do obehu vrátil/a</div>
+    </div>
+    <div class="welcome-bck-col">
+        <img src="Imgswapka-unscreen.gif" class="welcome-circle" alt="">
+    </div>
+    <div class="welcome-name-small">
+        Tento projekt je realizovaný vďaka podpore Nadácie VÚB.
+    </div>
+</div>
+
+<!-- Kontakt -->
+
+<div class="kontakt-bck">
+    <div class="kontakt-meno">Kontakt</div>
+    <div class="kontakt-text">
+
+        <b>Prevádzkovateľ:</b><br><br>
+
+        Baterkáreň<br>
+        Starohájska 1<br>
+        917 01 Trnava<br><br>
+
+        e-mail: <br>
+        ahoj@baterkaren.sk
+    </div>
+</div>
+
+</body>
+
+<script>
+
+    function show_menu(){
+        if (document.getElementById('hidden-menu').hidden){
+            document.getElementById('menu-logo').src = 'krizik_full.png';
+            document.getElementById('hidden-menu').hidden = false
+            document.getElementById('welcome').style.marginTop = "-201px";
+        }
+        else{
+            document.getElementById('menu-logo').src = 'menu_full.png';
+            document.getElementById('hidden-menu').hidden = true
+            document.getElementById('welcome').style.marginTop = "0px";
+        }
+    }
+</script>
+</html>
