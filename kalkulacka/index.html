@@ -343,54 +343,54 @@ border-color:white;
     <div class="vyber-name">Čo chceš zmeniť</div>
     <div class="vyber-inner">
         <div class="vyber-col">
-            <img src="0.png" class="vyber-col-img" alt="" onclick="zmena(0)">
+            <img src="../images/0.png" class="vyber-col-img" alt="" onclick="zmena(0)">
             <div class="vyber-col-name">Tričko</div>
         </div>
 
         <div class="vyber-col">
-            <img src="1.png" class="vyber-col-img" alt="" onclick="zmena(1)">
+            <img src="../images/1.png" class="vyber-col-img" alt="" onclick="zmena(1)">
             <div class="vyber-col-name">Košeľa</div>
         </div>
 
         <div class="vyber-col">
-            <img src="2.png" class="vyber-col-img" alt="" onclick="zmena(2)">
+            <img src="../images/2.png" class="vyber-col-img" alt="" onclick="zmena(2)">
             <div class="vyber-col-name">Rifle</div>
         </div>
 
         <div class="vyber-col">
-            <img src="3.png" class="vyber-col-img" alt="" onclick="zmena(3)">
+            <img src="../images/3.png" class="vyber-col-img" alt="" onclick="zmena(3)">
             <div class="vyber-col-name">Detské oblečenie</div>
         </div>
 
         <div class="vyber-col">
-            <img src="4.png" class="vyber-col-img" alt="" onclick="zmena(4)">
+            <img src="../images/4.png" class="vyber-col-img" alt="" onclick="zmena(4)">
             <div class="vyber-col-name">Hračka</div>
         </div>
     </div>
 
     <div class="vyber-inner">
         <div class="vyber-col">
-            <img src="5.png" class="vyber-col-img" alt="" onclick="zmena(5)">
+            <img src="../images/5.png" class="vyber-col-img" alt="" onclick="zmena(5)">
             <div class="vyber-col-name">Hrnček</div>
         </div>
 
         <div class="vyber-col">
-            <img src="6.png" class="vyber-col-img" alt="" onclick="zmena(6)">
+            <img src="../images/6.png" class="vyber-col-img" alt="" onclick="zmena(6)">
             <div class="vyber-col-name">Pohár</div>
         </div>
 
         <div class="vyber-col">
-            <img src="7.png" class="vyber-col-img" alt="" onclick="zmena(7)">
+            <img src="../images/7.png" class="vyber-col-img" alt="" onclick="zmena(7)">
             <div class="vyber-col-name">Šálka</div>
         </div>
 
         <div class="vyber-col">
-            <img src="8.png" class="vyber-col-img" alt="" onclick="zmena(8)">
+            <img src="../images/8.png" class="vyber-col-img" alt="" onclick="zmena(8)">
             <div class="vyber-col-name">Hrniec</div>
         </div>
 
         <div class="vyber-col">
-            <img src="9.png" class="vyber-col-img" alt="" onclick="zmena(9)">
+            <img src="../images/9.png" class="vyber-col-img" alt="" onclick="zmena(9)">
             <div class="vyber-col-name">Kniha</div>
         </div>
     </div>
@@ -583,12 +583,12 @@ function update(){
 
     function show_menu(){
         if (document.getElementById('hidden-menu').hidden){
-            document.getElementById('menu-logo').src = 'krizik_full.png';
+            document.getElementById('menu-logo').src = '../images/krizik_full.png';
             document.getElementById('hidden-menu').hidden = false
             document.getElementById('welcome').style.marginTop = "-201px";
         }
         else{
-            document.getElementById('menu-logo').src = 'menu_full.png';
+            document.getElementById('menu-logo').src = '../images/menu_full.png';
             document.getElementById('hidden-menu').hidden = true
             document.getElementById('welcome').style.marginTop = "0px";
         }
@@ -618,7 +618,6 @@ function update(){
     function pridat(){
         console.log(current)
         if(current == 0){
-            console.log('oh yeah ive heard all about you')
             zoznam[parseInt(document.getElementById('Typ-tricko').value)] += parseInt(document.getElementById('finnum').value)
         }
         else if(current == 4){
