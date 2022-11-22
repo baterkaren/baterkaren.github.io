@@ -72,82 +72,18 @@
 color:#bcf126;
 }
 
-.menu-hidden-velky:hover {
+.menu-hidden-velky a:hover {
 color:#bcf126;
 }
 
-
-/* welcome page */
-    .welcome-bck{
-        width:100%;
-        overflow: hidden;
-        background-image:url('../images/2.png');
-        background-size: cover;
-        height:550px;
-        margin-top:0px;
-    }
-
-    .welcome-bck-col-txt{
-        width:50%;
-        float: left;
-        box-sizing: border-box;
-        padding-left:40px;
-    }
-
-    .welcome-bck-col{
-        width:50%;
-        float: left;
-        text-align: center;
-    }
-
-    .welcome-name-main{
-        font-size:140px;
-        padding-top: 150px;
-        color:#bcf126;
-        font-family: 'DM Serif Display', serif;
-    }
-
-    .welcome-name-sub{
-        color:#6E1CE4;
-        font-family: 'DM Sans', sans-serif;
-        text-transform: uppercase;
-    }
-
-    .welcome-name-small{
-        font-family: 'DM Sans', sans-serif;
-        color: white;
-        font-size:10px;  
-        padding-left:20px;
-    }
-
-    .welcome-circle{
-        padding-top:50px;        
-        height:450px;
-    }
-
-/* intro */
-    .intro-bck{
-        background-image: url('backround_tovaren.png');
-        background-size: cover;
-        width:100%;
-        padding-top:60px;
-        padding-bottom:60px;
-    }
-
-    .intro-name{
-        padding-left:5%;
-        font-family: 'DM Serif Display', serif;
-        font-size:50px;
-    }
-
-    .intro-text{
-        width:75%;
-        padding-top:20px;
-        padding-left:5%;
-        font-size: 20px;
-        font-family: 'DM Sans', sans-serif;
-        text-align:justify;
-    }
+.menu-hidden-velky a {
+  text-align: left;
+  padding: 9px;
+  color:white;
+  font-size:27px;
+  z-index:1;
+  text-decoration: none;
+}
 
 /* zmena vyber */
 .vyber-bck{
@@ -481,20 +417,20 @@ border-color:white;
 
     <!-- hidden menu -->
 
-<table class='menu-hidden' id='hidden-menu' hidden>
-    <tr>
-      <th class="menu-hidden-velky">O Swapke</th>
-    </tr>
-      <tr>
-      <th class="menu-hidden-velky">CO2e kalkulačka</th>
-    </tr>
-      <tr>
-      <th class="menu-hidden-velky">Návod na používanie</th>
-    </tr>
-      <tr>
-      <th class="menu-hidden-velky">Kontakt</th>
-    </tr>
-  </table>
+    <table class='menu-hidden' id='hidden-menu' hidden>
+        <tr>
+            <th class="menu-hidden-velky"><a href="/">O Swapke</a></th>
+        </tr>
+          <tr>
+          <th class="menu-hidden-velky"><a href="/kalkulacka">CO2e kalkulačka</a></th>
+        </tr>
+         <tr>
+          <th class="menu-hidden-velky"><a href="/navod">Návod na používanie</a></th>
+        </tr>
+          <tr>
+          <th class="menu-hidden-velky"><a href="/kontakt">Kontakt</a></th>
+        </tr>
+      </table>
 
 <!-- Vyber -->
 <div class="vyber-bck">
@@ -594,7 +530,7 @@ border-color:white;
 
 <!-- Moj ucet -->
 
-<div class="ucet-bck">
+<div class="ucet-bck" id='moj-ucet'>
     <div class="ucet-col-left">
         <div class="ucet-name">Môj účet/meno idk</div>
         <div class="ucet-text">

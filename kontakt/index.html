@@ -60,6 +60,15 @@
   z-index:1;
 }
 
+.menu-hidden-velky a {
+  text-align: left;
+  padding: 9px;
+  color:white;
+  font-size:27px;
+  z-index:1;
+  text-decoration: none;
+}
+
 .menu-hidden-maly {
   text-align: left;
   padding: 9px;
@@ -72,7 +81,7 @@
 color:#bcf126;
 }
 
-.menu-hidden-velky:hover {
+.menu-hidden-velky a:hover {
 color:#bcf126;
 }
 
@@ -110,31 +119,31 @@ color:#bcf126;
 <body>
     <!-- menu -->
 <div class="menu-bck">
-    <img src="../images/SWAPka__logo.png" class="menu-logo" alt="" >
+   <a href="/"><img src="../images/SWAPka__logo.png" class="menu-logo" alt="" ></a>
 
     <img src="../images/menu_full.png" class="menu-soc" onclick="show_menu()" alt="" id="menu-logo">
-    <img src="../images/fb_full.png" class='menu-soc' alt="">
-    <img src="../images/ig_full.png" class="menu-soc" alt="">
-    <img src="../images/account_full.png" class="menu-soc" alt="">
+    <a href="https://www.facebook.com/BaterkarenTrnava"><img src="../images/fb_full.png" class='menu-soc' alt=""></a>
+    <a href="https://www.instagram.com/baterkaren_trnava/"><img src="../images/ig_full.png" class="menu-soc" alt=""></a>
+    <a href="/kalkulacka/#moj-ucet"><img src="../images/account_full.png" class="menu-soc" alt=""></a>
 
 </div>
 
     <!-- hidden menu -->
 
-<table class='menu-hidden' id='hidden-menu' hidden>
-    <tr>
-      <th class="menu-hidden-velky">O Swapke</th>
-    </tr>
-      <tr>
-      <th class="menu-hidden-velky">CO2e kalkulačka</th>
-    </tr>
-      <tr>
-      <th class="menu-hidden-velky">Návod na používanie</th>
-    </tr>
-      <tr>
-      <th class="menu-hidden-velky">Kontakt</th>
-    </tr>
-  </table>
+    <table class='menu-hidden' id='hidden-menu' hidden>
+        <tr>
+            <th class="menu-hidden-velky"><a href="/">O Swapke</a></th>
+        </tr>
+          <tr>
+          <th class="menu-hidden-velky"><a href="/kalkulacka">CO2e kalkulačka</a></th>
+        </tr>
+         <tr>
+          <th class="menu-hidden-velky"><a href="/navod">Návod na používanie</a></th>
+        </tr>
+          <tr>
+          <th class="menu-hidden-velky"><a href="/kontakt">Kontakt</a></th>
+        </tr>
+      </table>
 
 <!-- Kontakt -->
 
