@@ -60,6 +60,15 @@
   z-index:1;
 }
 
+.menu-hidden-velky a {
+  text-align: left;
+  padding: 9px;
+  color:white;
+  font-size:27px;
+  z-index:1;
+  text-decoration: none;
+}
+
 .menu-hidden-maly {
   text-align: left;
   padding: 9px;
@@ -72,7 +81,7 @@
 color:#bcf126;
 }
 
-.menu-hidden-velky:hover {
+.menu-hidden-velky a:hover {
 color:#bcf126;
 }
 
@@ -81,7 +90,7 @@ color:#bcf126;
     .welcome-bck{
         width:100%;
         overflow: hidden;
-        background-image:url('swapka_backround.png');
+        background-image:url('images/swapka_backround.png');
         background-size: cover;
         height:550px;
         margin-top:0px;
@@ -127,7 +136,7 @@ color:#bcf126;
 
 /* intro */
     .intro-bck{
-        background-image: url('backround_tovaren.png');
+        background-image: url('images/backround_tovaren.png');
         background-size: cover;
         width:100%;
         padding-top:60px;
@@ -151,7 +160,7 @@ color:#bcf126;
 
 /* zmena vyber */
 .vyber-bck{
-    background-image: url('swapka_backround.png');
+    background-image:url('images/swapka_backround.png');
     background-size: cover;
     width: 100%;
     padding-top:40px;
@@ -204,7 +213,7 @@ color:#bcf126;
 .spec-bck{
     width: 100%;
     background-color: black;
-    background-image: url('swapka_backround.png');
+    background-image:url('images/swapka_backround.png');
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -346,7 +355,7 @@ border-color:white;
 
 .o-udaje-bck{
     width: 100%;
-    background-image: url('swapka_backround.png');
+    background-image:url('images/swapka_backround.png');
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -375,7 +384,7 @@ border-color:white;
 
 .kontakt-bck{
     width: 100%;
-    background-image: url('swapka_backround.png');
+    background-image:url('images/swapka_backround.png');
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -405,7 +414,7 @@ border-color:white;
 .registracia-bck{
     width: 100%;
     background-color: black;
-    background-image: url('swapka_backround.png');
+    background-image:url('images/swapka_backround.png');
     background-size: cover;
     padding-top: 160px;
     padding-bottom: 160px;
@@ -470,12 +479,12 @@ border-color:white;
 <body>
     <!-- menu -->
 <div class="menu-bck">
-    <img src="SWAPka__logo.png" class="menu-logo" alt="" >
+    <img src="images/SWAPka__logo.png" class="menu-logo" alt="" >
 
-    <img src="menu_full.png" class="menu-soc" onclick="show_menu()" alt="" id="menu-logo">
-    <img src="fb_full.png" class='menu-soc' alt="">
-    <img src="ig_full.png" class="menu-soc" alt="">
-    <img src="account_full.png" class="menu-soc" alt="">
+    <img src="images/menu_full.png" class="menu-soc" onclick="show_menu()" alt="" id="menu-logo">
+    <img src="images/fb_full.png" class='menu-soc' alt="">
+    <img src="images/ig_full.png" class="menu-soc" alt="">
+    <img src="images/account_full.png" class="menu-soc" alt="">
 
 </div>
 
@@ -486,13 +495,13 @@ border-color:white;
         <th class="menu-hidden-velky"><a href="/kontakt/index.html">O Swapke</a></th>
     </tr>
       <a href="/kontakt"><tr>
-      <th class="menu-hidden-velky">CO2e kalkulačka</th>
+      <th class="menu-hidden-velky"><a href="/kontakt/index.html">CO2e kalkulačka</a></th>
     </tr></a>
       <a href="/navod"><tr>
-      <th class="menu-hidden-velky">Návod na používanie</th>
+      <th class="menu-hidden-velky"><a href="/kontakt/index.html">Návod na používanie</a></th>
     </tr></a>
       <a href="/kontakt"><tr>
-      <th class="menu-hidden-velky">Kontakt</th>
+      <th class="menu-hidden-velky"><a href="/kontakt/index.html">Kontakt</a></th>
     </tr></a>
   </table>
 
@@ -503,7 +512,7 @@ border-color:white;
         <div class="welcome-name-sub">ti povie, koľko co2 si ušetril/a,  keď si predmet do obehu vrátil/a</div>
     </div>
     <div class="welcome-bck-col">
-        <img src="Imgswapka-unscreen.gif" class="welcome-circle" alt="">
+        <img src="images/Imgswapka-unscreen.gif" class="welcome-circle" alt="">
     </div>
     <div class="welcome-name-small">
         Tento projekt je realizovaný vďaka podpore Nadácie VÚB.
@@ -574,12 +583,12 @@ border-color:white;
 
     function show_menu(){
         if (document.getElementById('hidden-menu').hidden){
-            document.getElementById('menu-logo').src = 'krizik_full.png';
+            document.getElementById('menu-logo').src = 'images/krizik_full.png';
             document.getElementById('hidden-menu').hidden = false
             document.getElementById('welcome').style.marginTop = "-201px";
         }
         else{
-            document.getElementById('menu-logo').src = 'menu_full.png';
+            document.getElementById('menu-logo').src = 'images/menu_full.png';
             document.getElementById('hidden-menu').hidden = true
             document.getElementById('welcome').style.marginTop = "0px";
         }
