@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel ="icon" href="../images/SWAPka__logo.png" type = "image/x-icon">
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
 
 </head>
 <style>
@@ -608,7 +610,7 @@ margin:auto;
             <input type="checkbox" id="marketing" name="marketing" class='registr-checkbox'>
             <label for="marketing" style="padding-left:10px">Súhlasim s využítím môjho emailu na marketingové účely</label>
             <!-- button --><br>
-            <button class="registr-button" onclick="sendMail()">
+            <button class="registr-button" onclick="sendEmail()">
                 REGISTROVAŤ SA
             </button>
     </div>
@@ -874,30 +876,18 @@ function update(){
     zmena(0)
     // MAILING
 
-    function sendMail() {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.set('Authorization', 'Basic ' + base64.encode('d3972b480873b748728c4299bfd666b8'+":" +'aeb02044fdf28348e10a132721d76d5e'));
-
-  const data = JSON.stringify({
-    "Messages": [{
-      "From": {"Email": "ahoj@zitudrzatelne.sk", "Name": "Baterkaren - SWAPka"},
-      "To": [{"Email": 'ahoj@zitudrzatelne.sk', "Name": 'Baterkaren - SWAPka'}],
-      "Subject": 'pokus',
-      "TextPart": document.getElementById('email').value
-    }]
-  });
-
-  const requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: data,
-  };
-
-  fetch("https://api.mailjet.com/v3.1/send", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    function sendEmail() {
+Email.send({
+    Host : "smtp.mailtrap.io",
+    Username : "886ad5c64e0efd",
+    Password : "e97d99de978d0e",
+    To : 'ahoj@zitudrzatelne.sk',
+    From : "ahoj@zitudrzatelne.sk",
+    Subject : "Test email",
+    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+}).then(
+  message => alert(message)
+);
 }
 </script>
 </html>
