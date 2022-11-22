@@ -227,6 +227,7 @@ color:#bcf126;
     width:70%;
     border: 1px solid black;
     padding:2px;
+    padding-top:5px;
     padding-bottom:5px;
     overflow: hidden;
     background-color: white;
@@ -669,13 +670,13 @@ margin:auto;
         <div class="spec-min-text">*nezabudni prosím, že v aktuálnej fáze nezáleží na farbe 
             či veľkosti tvojho predmetu</div>
 
-        <div class="spec-input-bck-100">
+        <div class="spec-input-bck-100" id="co2">
             * ušetrili sme co2e/kg
         </div>
         <div class="spec-min-text" id="Typ-tricko-small">*vybrané boli údaje pre "priemerný" predmet - napr pre "tričko" s priemernou hmotnosťou/veľkosťou a "priemernou" hodnotou 
             jeho uhlíkovej stopy + prelink na "metodologia"</div>
 
-            <div class="spec-input-bck-100" onclick="pridat()">
+            <div class="spec-input-bck-button" onclick="pridat()">
                 Pridať do mojich výsledkov
             </div>
 
@@ -755,6 +756,7 @@ function update(){
         document.getElementById('spec-img').src = '../images/' + num + '.png';
         document.getElementById('spec-meno').innerHTML = meno[num]
         document.getElementById('pridane').hidden = true;
+        document.getElementById('co2').innerHTML = 'Za <b>1</b> ušetríme <b>'+ cena[num] +'</b> CO2e/kg'
         current = num
 
         if(num == 0){
@@ -777,26 +779,33 @@ function update(){
     }
 
     function pridat(){
-        console.log(current)
-        if(current == 0){
-            zoznam[parseInt(document.getElementById('Typ-tricko').value)] += parseInt(document.getElementById('finnum').value)
-        }
-        else if(current == 4){
-            zoznam[parseInt(document.getElementById('Typ-hracka').value)] += parseInt(document.getElementById('finnum').value)
+        if(document.getElementById('finnum').value == ''){
+            console.log('ziadna hodnota')
         }
         else{
-            console.log(zoznam[current])
-            zoznam[current] += parseInt(document.getElementById('finnum').value)
-            console.log(zoznam[current])
-        }
-        document.getElementById('pridane').hidden = false;
-        document.getElementById('finnum').value = '';
+            console.log(current)
+            if(current == 0){
+                zoznam[parseInt(document.getElementById('Typ-tricko').value)] += parseInt(document.getElementById('finnum').value)
+            }
+            else if(current == 4){
+                zoznam[parseInt(document.getElementById('Typ-hracka').value)] += parseInt(document.getElementById('finnum').value)
+            }
+            else{
+                console.log(zoznam[current])
+                zoznam[current] += parseInt(document.getElementById('finnum').value)
+                console.log(zoznam[current])
+            }
+            document.getElementById('pridane').hidden = false;
+            document.getElementById('finnum').value = '';
+            document.getElementById('co2').innerHTML = 'Za <b>'+ +'</b> si ušetril/a <b>'+ cena[current]*document.getElementById('finnum').value +'</b> CO2e/kg'
 
-        window.localStorage.setItem('zoznam', JSON.stringify(zoznam))
-        console.log(window.localStorage.getItem('zoznam'), zoznam)
-        update()
+            window.localStorage.setItem('zoznam', JSON.stringify(zoznam))
+            console.log(window.localStorage.getItem('zoznam'), zoznam)
+            update()
+        }
     }
 
     update()
+    zmena(0)
 </script>
 </html>
