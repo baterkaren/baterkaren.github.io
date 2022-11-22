@@ -242,6 +242,12 @@ border:none;
 border-color:white;
 }
 
+.spec-min-text{
+padding-top:20px;
+color:white;
+text-align:center;
+}
+
 .ucet-bck{
     width: 100%;
     background-color: black;
@@ -487,7 +493,7 @@ border-color:white;
                 <option value="11">Drevená</option>
             </select>
         </div>
-
+        <div class="spec-min-text" id="Typ-tricko-small">*v aktuálnej fáze nájdeš len najčastejšie materiály</div>
         <div class="spec-input-bck">
             <div class="spec-input-left" id="finid" value="0">Počet ks</div>
             <input class="spec-input-right" type="number" id="finnum">
@@ -575,12 +581,15 @@ function update(){
         if(num == 0){
             document.getElementById('typ').hidden = false;
             document.getElementById('Typ-tricko').hidden = false;
+            document.getElementById('Typ-tricko-small').hidden = false;
             document.getElementById('Typ-hracka').hidden = true;
         }
         else if(num == 4){
             document.getElementById('typ').hidden = false;
             document.getElementById('Typ-hracka').hidden = false;
             document.getElementById('Typ-tricko').hidden = true;
+            document.getElementById('Typ-tricko-small').hidden = true;
+
         }
         else{
             document.getElementById('typ').hidden = true;
