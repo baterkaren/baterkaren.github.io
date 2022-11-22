@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWAPka</title>
+    <title>SWAPka - Kalkulačka</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel ="icon" href="../images/SWAPka__logo.png" type = "image/x-icon">
 
 </head>
 <style>
@@ -87,7 +88,7 @@ color:#bcf126;
 
 /* zmena vyber */
 .vyber-bck{
-    background-image: url('swapka_backround.png');
+    background-image: url('../images/swapka_backround.png');
     background-size: cover;
     width: 100%;
     padding-top:40px;
@@ -140,7 +141,7 @@ color:#bcf126;
 .spec-bck{
     width: 100%;
     background-color: black;
-    background-image: url('swapka_backround.png');
+    background-image: url('../images/swapka_backround.png');
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -282,7 +283,7 @@ border-color:white;
 
 .o-udaje-bck{
     width: 100%;
-    background-image: url('swapka_backround.png');
+    background-image: url('../images/swapka_backround.png');
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -307,130 +308,35 @@ border-color:white;
     margin:auto;
 }
 
-/* kontakt */
-
-.kontakt-bck{
-    width: 100%;
-    background-image: url('swapka_backround.png');
-    background-size: cover;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    overflow: hidden;
-}
-
-.kontakt-meno{
-    font-size: 35px;
-    color: #bcf126;
-    padding-bottom:20px;
-    padding-left:5%;
-    font-family: 'DM Serif Display', serif;
-}
-
-.kontakt-text{
-    font-size: 20px;
-    text-align: justify;
-    color: white;
-    padding-bottom:20px;
-    font-family: 'DM Serif Display', serif;
-    width:90%;
-    margin:auto;
-}
-
-/* registracia */
-
-.registracia-bck{
-    width: 100%;
-    background-color: black;
-    background-image: url('swapka_backround.png');
-    background-size: cover;
-    padding-top: 160px;
-    padding-bottom: 160px;
-    overflow: hidden;
-}
-
-.registr-col-left{
-    width: 40%;
-    float: right;
-    padding-left:5%;
-    color:white;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.registr-col-right{
-    width: 45%;
-    float: right;
-    padding-left:5%;
-    padding-right:5%;
-    text-align: justify;
-    color:white;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.registr-meno{
-    font-size: 35px;
-    color: #bcf126;
-    padding-bottom:20px;
-    font-family: 'DM Serif Display', serif;
-}
-
-.registr-input{
-    margin-top:20px;
-    width:70%;
-    padding:2%;
-    padding-top:7px;
-    padding-bottom:7px;
-    background-color: white;
-    border-radius: 17px;
-    color: black;
-}
-
-.registr-checkbox {
-    margin-top:40px;
-    -ms-transform: scale(3); /* IE */
-  -moz-transform: scale(3); /* FF */
-  -webkit-transform: scale(3); /* Safari and Chrome */
-  -o-transform: scale(3); /* Opera */
-  transform: scale(3);
-}
-
-.registr-button{
-    margin-top:20px;
-    padding:10px;
-    background-color: white;
-    border-radius: 17px;
-    color: black;
-    margin-top:40px;
-}
-
 </style>
 <body>
     <!-- menu -->
-<div class="menu-bck">
-    <img src="SWAPka__logo.png" class="menu-logo" alt="" >
-
-    <img src="menu_full.png" class="menu-soc" onclick="show_menu()" alt="" id="menu-logo">
-    <img src="fb_full.png" class='menu-soc' alt="">
-    <img src="ig_full.png" class="menu-soc" alt="">
-    <img src="account_full.png" class="menu-soc" alt="">
-
-</div>
-
-    <!-- hidden menu -->
-
-    <table class='menu-hidden' id='hidden-menu' hidden>
-        <tr>
-            <th class="menu-hidden-velky"><a href="/">O Swapke</a></th>
-        </tr>
-          <tr>
-          <th class="menu-hidden-velky"><a href="/kalkulacka">CO2e kalkulačka</a></th>
-        </tr>
-         <tr>
-          <th class="menu-hidden-velky"><a href="/navod">Návod na používanie</a></th>
-        </tr>
-          <tr>
-          <th class="menu-hidden-velky"><a href="/kontakt">Kontakt</a></th>
-        </tr>
-      </table>
+    <div class="menu-bck">
+        <a href="/"><img src="../images/SWAPka__logo.png" class="menu-logo" alt="" ></a>
+     
+         <img src="../images/menu_full.png" class="menu-soc" onclick="show_menu()" alt="" id="menu-logo">
+         <a href="https://www.facebook.com/BaterkarenTrnava"><img src="../images/fb_full.png" class='menu-soc' alt=""></a>
+         <a href="https://www.instagram.com/baterkaren_trnava/"><img src="../images/ig_full.png" class="menu-soc" alt=""></a>
+         <a href="/kalkulacka/#moj-ucet"><img src="../images/account_full.png" class="menu-soc" alt=""></a>
+     
+     </div>
+     
+         <!-- hidden menu -->
+     
+         <table class='menu-hidden' id='hidden-menu' hidden>
+             <tr>
+                 <th class="menu-hidden-velky"><a href="/">O Swapke</a></th>
+             </tr>
+               <tr>
+               <th class="menu-hidden-velky"><a href="/kalkulacka">CO2e kalkulačka</a></th>
+             </tr>
+              <tr>
+               <th class="menu-hidden-velky"><a href="/navod">Návod na používanie</a></th>
+             </tr>
+               <tr>
+               <th class="menu-hidden-velky"><a href="/kontakt">Kontakt</a></th>
+             </tr>
+           </table>
 
 <!-- Vyber -->
 <div class="vyber-bck">
