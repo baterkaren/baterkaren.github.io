@@ -386,20 +386,32 @@ color:#bcf126;
 /* cookies */
 
 .cookies-bck{
-    z-index: 2;
-    width:100%;
-    padding-top:40px;
-    padding-bottom:40px;
-    background-color: thistle;
+    z-index: 3;
+    width:95%;
+    padding-left:2.5%;
+    padding-right:2.5%;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: #cdcdcd;
+    position: absolute;
+  top:0px;
+  right:0px;
+  font-family: 'DM Sans', sans-serif;
+
 }
 
+.cookies-button{
+    background-color:black;
+    font-family: 'DM Sans', sans-serif;
+    color:#bcf126;
+    padding:5px;
+    margin:10px;
+    width:80px;
+    text-align: center;
+    display: inline-block;
+}
 </style>
 <body>
-<!-- cookies -->
-
-<div class="cookies-bck">a</div>
-
-
 
     <!-- menu -->
     <div class="menu-bck">
@@ -428,6 +440,12 @@ color:#bcf126;
                <th class="menu-hidden-velky"><a href="/kontakt">Kontakt</a></th>
              </tr>
            </table>
+<!-- cookies -->
+
+<div class="cookies-bck" id="cookies">text: Na tomto webe o tebe nezbierame cookies. Iba si vypýtame tvoj email, a to na marketingové účely (prelink na “ochrana osobnych udajov”) text: Na tomto webe o tebe nezbierame cookies. Iba si vypýtame tvoj email, a to na marketingové účely (prelink na “ochrana osobnych udajov”)
+    <div class="cookies-button" onclick="cookies()">Súhlasím</div>
+    <div class="cookies-button" onclick="cookies()">Neúhlasím</div>
+</div>
 
     <!-- welcome -->
 <div class="welcome-bck" id="welcome">
@@ -502,5 +520,19 @@ color:#bcf126;
             document.getElementById('welcome').style.marginTop = "0px";
         }
     }
+
+    function cookies(){
+        window.localStorage.setItem('cookies', 'true');
+        document.getElementById('cookies').hidden = true;
+    }
+
+    if(window.localStorage.getItem('cookies') == 'true'){
+        console.log('cookies approved')
+        document.getElementById('cookies').hidden = true;
+    }
+    else{
+        document.getElementById('cookies').hidden = false;
+    }
+
 </script>
 </html>
