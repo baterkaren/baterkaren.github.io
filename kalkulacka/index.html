@@ -13,6 +13,11 @@
 
 </head>
 <style>
+
+    html{
+        scroll-behavior: smooth;
+    }
+
     body{
         padding:0px;
         margin:0px;
@@ -454,7 +459,7 @@ text-align:center;
     <div class="vyber-name">Čo si dnes zachránil/a? :) </div>
     <div class="vyber-inner">
         <div class="vyber-col">
-            <img src="../images/0.png" class="vyber-col-img" alt="" onclick="zmena(0)">
+            <a href="/kalkulacka/#spec"><img src="../images/0.png" class="vyber-col-img" alt="" onclick="zmena(0)"></a>
             <div class="vyber-col-name">Tričko</div>
         </div>
 
@@ -610,10 +615,6 @@ function update(){
         document.getElementById('spec-meno').innerHTML = meno[num]
         document.getElementById('pridane').hidden = true;
         current = num
-        history.replaceState({
-    id: 'kalkulacka',
-    source: 'web'
-}, 'Kalkulacka', 'https://zitudrzatelne.netlify.app/kalkulacka/#spec');
 
         if(num == 0){
             document.getElementById('typ').hidden = false;
