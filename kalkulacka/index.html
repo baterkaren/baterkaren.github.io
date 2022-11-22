@@ -416,8 +416,41 @@ text-align:center;
              </tr>
            </table>
 
+           <!-- Registracia -->
+
+<div class="registracia-bck" id="welcome">
+    <div class="registr-col-left">
+        <div class="registr-meno">Registrácia</div>
+        E-mailová adresa*<br>
+            <input class="registr-input" type="email">
+            <!-- check one --><br>
+            <input type="checkbox" id="gdpr" name="gdpr" class='registr-checkbox'>
+            <label for="gdpr" style="padding-left:10px">Prečítal/a som si GDPR pravidlá a súhlasím s nimi</label>
+            <!-- check one --><br>
+            <input type="checkbox" id="marketing" name="marketing" class='registr-checkbox'>
+            <label for="marketing" style="padding-left:10px">Súhlasim s využítím môjho emailu na marketingové účely</label>
+            <!-- button --><br>
+            <button class="registr-button">
+                REGISTROVAŤ SA
+            </button>
+    </div>
+
+    <div class="registr-col-right">
+        Ahoj človek. :) <br><br>
+
+        Veľká vďaka, že si sa rozhodol a rozhodla používať Swapku. Aplikácia je vo svojej úvodnej fáze a ty si jedným z jej prvých používateľov a používateliek. Skvelé!
+        <br><br> 
+        V aktuálnom nadstavení ti Swapka bude fungovať pod 1 mailom na 1 tvojom zariadení. Keď sa raz registruješ so svojím emailom, už sa tak na tomto zariadení nebudeš musieť registrovať či znova prihlasovať.
+        <br><br>
+        Ale - swapka si ťa bude pamätať len na tomto zariadení (tj na tom s ktorým sa 1x registruješ). Ano je to nevýhoda, my samozrejme už teraz pracujeme na jej vylepšení. :) 
+        <br>
+        Registruješ sa vložením svojho emailu - ten je u nás v bezpečí (prelinkovanie s GDPR).
+        <br><br>
+        Ak máš nápad či spätnú väzbu - radi si ju vypočujeme na swapka@zitudrzatelne.sk    </div>
+</div>
+
 <!-- Vyber -->
-<div class="vyber-bck" id="welcome">
+<div class="vyber-bck">
     <div class="vyber-name">Čo si dnes zachránil/a? :) </div>
     <div class="vyber-inner">
         <div class="vyber-col">
@@ -475,7 +508,7 @@ text-align:center;
 
 <!-- Zmena vec -->
 
-<div class="spec-bck">
+<div class="spec-bck" id="spec">
     <div class="spec-col">
         <div class="spec-meno" id="spec-meno">Tričko</div>
         <img src="../images/1.png" class="spec-img" alt="" id="spec-img">
@@ -577,6 +610,10 @@ function update(){
         document.getElementById('spec-meno').innerHTML = meno[num]
         document.getElementById('pridane').hidden = true;
         current = num
+        history.replaceState({
+    id: 'kalkulacka',
+    source: 'web'
+}, 'Kalkulacka', 'https://zitudrzatelne.netlify.app/kalkulacka/#spec');
 
         if(num == 0){
             document.getElementById('typ').hidden = false;
