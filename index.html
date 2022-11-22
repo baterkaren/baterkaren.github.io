@@ -47,15 +47,6 @@
     padding:10px;
 }
 
-.menu-hidden {
-  width: 450px;
-  background-color:rgba(0, 0, 0, 0.7);
-  z-index:1;
-  position: sticky;
-  top:112px;
-  right:0px;
-}
-
 .menu-hidden-velky {
   text-align: left;
   padding: 9px;
@@ -388,6 +379,61 @@ color:#bcf126;
 
 
 }
+
+@media only screen and (max-width: 690px) {
+    .menu-hidden {
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.7);
+  z-index:1;
+  position: sticky;
+  top:112px;
+  right:0px;
+}
+
+.welcome-bck{
+    height:auto;
+}
+.welcome-bck-col-txt{
+        width:100%;
+        float: left;
+        box-sizing: border-box;
+        padding-left:40px;
+    }
+
+    .welcome-bck-col{
+        width:100%;
+        float: left;
+        text-align: center;
+    }
+
+    .welcome-name-small{
+        font-family: 'DM Sans', sans-serif;
+        color: white;
+        font-size:10px;  
+        padding-top:10px;
+        padding-bottom: 10px;
+        padding-left:20px;
+    }
+
+    .logo-col{
+    width:100%;
+    float:left;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.registr-checkbox {
+    margin-top:40px;
+    -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+}
+
+}
+
 
 </style>
 <body>
