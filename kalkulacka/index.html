@@ -795,7 +795,7 @@ function update(){
                 zoznam[current] += parseInt(document.getElementById('finnum').value)
                 console.log(zoznam[current])
             }
-            document.getElementById('co2').innerHTML = 'Za <b>'+document.getElementById('finnum').innerHTML +'</b> si ušetril/a <b>'+ cena[current]*parseInt(document.getElementById('finnum').value) +'</b> CO2e/kg'
+            document.getElementById('co2').innerHTML = 'Za <b>'+document.getElementById('finnum').value +'</b> si ušetril/a <b>'+ cena[current]*parseInt(document.getElementById('finnum').value) +'</b> CO2e/kg'
             document.getElementById('pridane').hidden = false;
             document.getElementById('finnum').value = '';
 
