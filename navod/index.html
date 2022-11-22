@@ -189,8 +189,8 @@ border-color:white;
     width: 100%;
     background-image: url('../images/swapka_backround.png');
     background-size: cover;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 140px;
+    padding-bottom: 140px;
     overflow: hidden;
 }
 
@@ -218,8 +218,8 @@ border-color:white;
     width: 100%;
     background-image: url('../images/swapka_backround.png');
     background-size: cover;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 140px;
+    padding-bottom: 140px;
     overflow: hidden;
 }
 
@@ -273,7 +273,7 @@ border-color:white;
 
 <!-- Ako používať SWAPku? -->
 
-<div class="kontakt-bck">
+<div class="kontakt-bck" id='welcome'>
     <div class="kontakt-meno">Ako používať SWAPku?</div>
     <div class="kontakt-text">
 
@@ -356,12 +356,12 @@ border-color:white;
 
     function show_menu(){
         if (document.getElementById('hidden-menu').hidden){
-            document.getElementById('menu-logo').src = 'krizik_full.png';
+            document.getElementById('menu-logo').src = '../images/krizik_full.png';
             document.getElementById('hidden-menu').hidden = false
             document.getElementById('welcome').style.marginTop = "-201px";
         }
         else{
-            document.getElementById('menu-logo').src = 'menu_full.png';
+            document.getElementById('menu-logo').src = '../images/menu_full.png';
             document.getElementById('hidden-menu').hidden = true
             document.getElementById('welcome').style.marginTop = "0px";
         }

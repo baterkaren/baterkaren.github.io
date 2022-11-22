@@ -203,6 +203,19 @@ color:#bcf126;
     border-radius: 17px;
 }
 
+.spec-input-bck-pridane{
+    margin:auto;
+    margin-top:40px;
+    width:70%;
+    border: 1px solid black;
+    padding:2px;
+    padding-top:5px;
+    padding-bottom:5px;
+    overflow: hidden;
+    background-color: #bcf126;
+    border-radius: 17px;
+}
+
 .spec-input-left{
 float: left;
 width:70%;
@@ -339,7 +352,7 @@ border-color:white;
            </table>
 
 <!-- Vyber -->
-<div class="vyber-bck">
+<div class="vyber-bck" id="welcome">
     <div class="vyber-name">Čo chceš zmeniť</div>
     <div class="vyber-inner">
         <div class="vyber-col">
@@ -428,8 +441,8 @@ border-color:white;
             Pridať do tabuľky
         </div>
 
-        <div class="spec-input-bck-button" onclick="pridat()">
-            Pridane
+        <div class="spec-input-bck-pridane" id="pridane" hidden>
+            Pridané
         </div>
     </div>
 </div>
@@ -438,7 +451,7 @@ border-color:white;
 
 <div class="ucet-bck" id='moj-ucet'>
     <div class="ucet-col-left">
-        <div class="ucet-name">Môj účet/meno idk</div>
+        <div class="ucet-name">Môj účet</div>
         <div class="ucet-text">
             POČET PREDMETOV <div class="ucet-text-right" id="ucet-predmet">-</div>
             <hr>
@@ -446,7 +459,7 @@ border-color:white;
         </div>
     </div>
     <div class="ucet-col-right">
-        <img src="strom_full.png" class="ucet-strom" alt="">
+        <img src="../images/strom_full.png" class="ucet-strom" alt="">
     </div>
 </div>
 
@@ -534,6 +547,7 @@ function update(){
     function zmena(num){
         document.getElementById('spec-img').src = num + '.png';
         document.getElementById('spec-meno').innerHTML = meno[num]
+        document.getElementById('pridane').hidden = true;
         current = num
 
         if(num == 0){
@@ -565,6 +579,8 @@ function update(){
             zoznam[current] += parseInt(document.getElementById('finnum').value)
             console.log(zoznam[current])
         }
+        document.getElementById('pridane').hidden = false;
+        document.getElementById('finnum').value = '';
 
         window.localStorage.setItem('zoznam', JSON.stringify(zoznam))
         console.log(window.localStorage.getItem('zoznam'), zoznam)
