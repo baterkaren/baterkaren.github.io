@@ -600,7 +600,7 @@ margin:auto;
     <div class="registr-col-left">
         <div class="registr-meno">Registrácia</div>
         E-mailová adresa*<br>
-            <input class="registr-input" type="email">
+            <input class="registr-input" type="email" id="email">
             <!-- check one --><br>
             <input type="checkbox" id="gdpr" name="gdpr" class='registr-checkbox'>
             <label for="gdpr" style="padding-left:10px">Prečítal/a som si GDPR pravidlá a súhlasím s nimi</label>
@@ -872,5 +872,32 @@ function update(){
 
     update()
     zmena(0)
+    // MAILING
+
+    function sendMail() {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.set('Authorization', 'Basic ' + base64.encode('d3972b480873b748728c4299bfd666b8'+":" +'aeb02044fdf28348e10a132721d76d5e'));
+
+  const data = JSON.stringify({
+    "Messages": [{
+      "From": {"Email": "ahoj@zitudrzatelne.sk", "Name": "Baterkaren - SWAPka"},
+      "To": [{"Email": 'ahoj@zitudrzatelne.sk', "Name": 'Baterkaren - SWAPka'}],
+      "Subject": 'pokus',
+      "TextPart": document.getElementById('email').value
+    }]
+  });
+
+  const requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: data,
+  };
+
+  fetch("https://api.mailjet.com/v3.1/send", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+}
 </script>
 </html>
