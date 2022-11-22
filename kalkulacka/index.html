@@ -514,7 +514,6 @@ ucet_number = 0;
 zoznam = JSON.parse(window.localStorage.getItem('zoznam'))
 current = 0
 
-
 function update(){
     for(let i = 0; i < zoznam.length; i++){
         ucet_predmet += zoznam[i]
@@ -545,7 +544,7 @@ function update(){
     }
 
     function zmena(num){
-        document.getElementById('spec-img').src = num + '.png';
+        document.getElementById('spec-img').src = '../images/' + num + '.png';
         document.getElementById('spec-meno').innerHTML = meno[num]
         document.getElementById('pridane').hidden = true;
         current = num
