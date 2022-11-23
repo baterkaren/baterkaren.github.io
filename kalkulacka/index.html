@@ -613,10 +613,10 @@ margin:auto;
             <input class="registr-input" type="email" id="email">
             <!-- check one --><br>
             <input type="checkbox" id="gdpr" name="gdpr" class='registr-checkbox'>
-            <label for="gdpr" style="padding-left:10px">Prečítal/a som si GDPR pravidlá a súhlasím s nimi</label>
+            <label for="gdpr" style="padding-left:10px">Prečítal/a som si <a href="/navod/#gdpr">GDPR pravidlá</a> a súhlasím s nimi</label>
             <!-- check one --><br>
             <input type="checkbox" id="marketing" name="marketing" class='registr-checkbox'>
-            <label for="marketing" style="padding-left:10px">Súhlasim s využítím môjho emailu na marketingové účely</label>
+            <label for="marketing" style="padding-left:10px">Súhlasim s využítím môjho emailu na <a href="/navod/#gdpr">marketingové účely</a></label>
             <!-- button --><br>
             <button class="registr-button" onclick="sendEmail()">
                 REGISTROVAŤ SA
@@ -632,7 +632,7 @@ margin:auto;
         <br><br>
         Ale - swapka si ťa bude pamätať len na tomto zariadení (tj na tom s ktorým sa 1x registruješ). Ano je to nevýhoda, my samozrejme už teraz pracujeme na jej vylepšení. :) 
         <br>
-        Registruješ sa vložením svojho emailu - ten je u nás v bezpečí (prelinkovanie s GDPR).
+        Registruješ sa vložením svojho emailu - <a href="/navod/#gdpr">ten je u nás v bezpečí</a>.
         <br><br>
         Ak máš nápad či spätnú väzbu - radi si ju vypočujeme na swapka@zitudrzatelne.sk    </div>
 </div>
@@ -903,6 +903,7 @@ function update(){
             }
             else{
                 window.localStorage.setItem('ucet', 'true');
+                ucet_update()
                 window.location.href = "mailto:ahoj@zitudrzatelne.sk?subject=Registrácia&body=Odoslaním mailu sa registruješ :)). Tvoj registračný mail: "+ document.getElementById('email').value;
             }
         }
