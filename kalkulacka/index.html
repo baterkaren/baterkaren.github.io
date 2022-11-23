@@ -122,13 +122,6 @@ color:#bcf126;
     text-align: center;
 }
 
-.vyber-col:nth-child(2) .vyber-col-img{
-    border-radius: 50%;
-    background-color: #6E1CE4;
-    margin-top:15px;
-    width:65%;
-}
-
 .vyber-col-name{
     color:white;
     font-family: 'DM Sans', sans-serif;
@@ -645,7 +638,7 @@ margin:auto;
 </div>
 
 <!-- Vyber -->
-<div class="vyber-bck">
+<div class="vyber-bck" id="vyber-bck">
     <div class="vyber-name">Čo si dnes zachránil/a? :) </div>
     <div class="vyber-inner">
         <div class="vyber-col">
@@ -664,17 +657,18 @@ margin:auto;
         </div>
 
         <div class="vyber-col">
-            <a href="/kalkulacka/#spec"><img src="../images/3.png" class="vyber-col-img" alt="" onclick="zmena(3)"></a>
-            <div class="vyber-col-name">Detské oblečenie</div>
+            <a href="/kalkulacka/#spec"><img src="../images/5.png" class="vyber-col-img" alt="" onclick="zmena(5)"></a>
+            <div class="vyber-col-name">Hrnček</div>
         </div>
 
         <div class="vyber-col">
             <a href="/kalkulacka/#spec"><img src="../images/4.png" class="vyber-col-img" alt="" onclick="zmena(4)"></a>
             <div class="vyber-col-name">Hračka</div>
         </div>
+
         <div class="vyber-col">
-            <a href="/kalkulacka/#spec"><img src="../images/5.png" class="vyber-col-img" alt="" onclick="zmena(5)"></a>
-            <div class="vyber-col-name">Hrnček</div>
+            <a href="/kalkulacka/#spec"><img src="../images/3.png" class="vyber-col-img" alt="" onclick="zmena(3)"></a>
+            <div class="vyber-col-name">Detské oblečenie</div>
         </div>
 
         <div class="vyber-col">
@@ -827,13 +821,22 @@ function update(){
         if (document.getElementById('hidden-menu').hidden){
             document.getElementById('menu-logo').src = '../images/krizik_full.png';
             document.getElementById('hidden-menu').hidden = false
-            document.getElementById('welcome').style.marginTop = "-201px";
+            if(window.localStorage.getItem('ucet') == 'true'){
+                document.getElementById('vyber-bck').style.marginTop = "-201px";
+            }
+            else{
+                document.getElementById('welcome').style.marginTop = "-201px";
+            }
         }
         else{
             document.getElementById('menu-logo').src = '../images/menu_full.png';
             document.getElementById('hidden-menu').hidden = true
-            document.getElementById('welcome').style.marginTop = "0px";
-        }
+            if(window.localStorage.getItem('ucet') == 'true'){
+                document.getElementById('vyber-bck').style.marginTop = "0px";
+            }
+            else{
+                document.getElementById('welcome').style.marginTop = "0px";
+            }        }
     }
 
     function zmena(num){
@@ -894,17 +897,30 @@ function update(){
     // MAILING
 
     function sendEmail() {
-Email.send({
-    Host : "smtp.mailtrap.io",
-    Username : "886ad5c64e0efd",
-    Password : "e97d99de978d0e",
-    To : 'ahoj@zitudrzatelne.sk',
-    From : "ahoj@zitudrzatelne.sk",
-    Subject : "Test email",
-    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
-}).then(
-  message => alert(message)
-);
+        if(document.getElementById('gdpr').checked && document.getElementById('marketing').checked){
+            if(document.getElementById('email').value == ''){
+                alert('Chýba email')
+            }
+            else{
+                window.localStorage.setItem('ucet', 'true');
+                window.location.href = "mailto:ahoj@zitudrzatelne.sk?subject=Registrácia&body=Odoslaním mailu sa registruješ :)). Tvoj registračný mail: "+ document.getElementById('email').value;
+            }
+        }
+        else{
+            alert('Na registráciu potrebuješ odsúhlasiť obe podmienky')
+        }
 }
+
+function ucet_update(){
+    if(window.localStorage.getItem('ucet') == 'true'){
+        console.log('ucet existuje')
+        document.getElementById('welcome').hidden = true;
+    }
+    else{
+        document.getElementById('welcome').hidden = false;
+    }
+}
+
+ucet_update()
 </script>
 </html>
