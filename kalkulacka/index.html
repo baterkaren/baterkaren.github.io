@@ -904,6 +904,7 @@ function update(){
             else{
                 window.localStorage.setItem('ucet', 'true');
                 ucet_update()
+                alert('Mail bol zaregistrovaný')
                 window.location.href = "mailto:ahoj@zitudrzatelne.sk?subject=Registrácia&body=Odoslaním mailu sa registruješ :)). Tvoj registračný mail: "+ document.getElementById('email').value;
             }
         }
